@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хостинг - Дикий Сад</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        :root {
+            --gray80-23262d: #23262d;
+            --graydark-0e1012: #0e1012;
+            --white-ffffff: white;
+            --gray90-161a1d: #161a1d;
+            --blue50-007afc: #007afc;
+            --gray60-566171: #566171;
+            --gray40-a0aaba: #a0aaba;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--gray80-23262d);
+            background: var(--white-ffffff);
+            padding-top: 76px;
+        }
+
+        .section-hero {
+            background: linear-gradient(180deg, #EFF7FF 0%, #FFFFFF 100%);
+            padding: 80px 0;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--gray80-23262d);
+        }
+
+        .section-description {
+            font-size: 1.25rem;
+            color: var(--gray60-566171);
+            margin-bottom: 2rem;
+        }
+
+        .service-card {
+            background: var(--white-ffffff);
+            border-radius: 12px;
+            padding: 2rem;
+            height: 100%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1.5rem;
+            color: var(--blue50-007afc);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--gray80-23262d);
+        }
+
+        .service-description {
+            color: var(--gray60-566171);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            color: var(--gray60-566171);
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--blue50-007afc);
+            font-weight: bold;
+        }
+
+        .pricing-section {
+            background: var(--gray90-161a1d);
+            color: var(--white-ffffff);
+            padding: 60px 0;
+            margin-top: 60px;
+        }
+
+        .pricing-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-description {
+            color: var(--gray40-a0aaba);
+            margin-bottom: 2rem;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--blue50-007afc);
+        }
+
+        .pricing-card .period {
+            color: var(--gray40-a0aaba);
+            margin-bottom: 2rem;
+        }
+
+        .datacenter-section {
+            padding: 60px 0;
+        }
+
+        .datacenter-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .datacenter-card {
+            background: var(--white-ffffff);
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .datacenter-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--gray80-23262d);
+        }
+
+        .datacenter-card p {
+            color: var(--gray60-566171);
+            margin-bottom: 1rem;
+        }
+
+        .btn-order {
+            background: var(--blue50-007afc);
+            color: var(--white-ffffff);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-order:hover {
+            background: var(--blue60-0062ca);
+            color: var(--white-ffffff);
+        }
+    </style>
+</head>
+<body>
+    <!-- Импортируем навбар из index.html -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <!-- ... навбар ... -->
+    </nav>
+
+    <!-- Главная секция -->
+    <section class="section-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="section-title">Хостинг послуги</h1>
+                    <p class="section-description">
+                        Надійний хостинг та colocation послуги для вашого бізнесу
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Услуги -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Наші послуги</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z"/>
+                        </svg>
+                        <h3 class="service-title">Colocation</h3>
+                        <p class="service-description">
+                            Розміщення серверного обладнання в нашому дата-центрі
+                        </p>
+                        <ul class="feature-list">
+                            <li>Відведена лінія</li>
+                            <li>Клімат-контроль</li>
+                            <li>Безперебійне живлення</li>
+                            <li>24/7 підтримка</li>
+                        </ul>
+                        <a href="#" class="btn-order">Замовити</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z"/>
+                        </svg>
+                        <h3 class="service-title">VPS</h3>
+                        <p class="service-description">
+                            Віртуальні приватні сервери для вашого проекту
+                        </p>
+                        <ul class="feature-list">
+                            <li>SSD накопичувачі</li>
+                            <li>Гнучкі конфігурації</li>
+                            <li>Миттєве розгортання</li>
+                            <li>Повний доступ root</li>
+                        </ul>
+                        <a href="#" class="btn-order">Замовити</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z"/>
+                        </svg>
+                        <h3 class="service-title">Хостинг</h3>
+                        <p class="service-description">
+                            Хостинг для вашого веб-сайту
+                        </p>
+                        <ul class="feature-list">
+                            <li>PHP, MySQL</li>
+                            <li>SSL сертифікати</li>
+                            <li>Безлімітний трафік</li>
+                            <li>Технічна підтримка</li>
+                        </ul>
+                        <a href="#" class="btn-order">Замовити</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Тарифы -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="pricing-title text-center">Тарифи VPS</h2>
+            <p class="pricing-description text-center">
+                Виберіть оптимальну конфігурацію для вашого проекту
+            </p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <h3>Базовий</h3>
+                        <div class="price">299 грн</div>
+                        <div class="period">/місяць</div>
+                        <ul class="feature-list">
+                            <li>2 ядра CPU</li>
+                            <li>2 ГБ RAM</li>
+                            <li>20 ГБ SSD</li>
+                            <li>Безлімітний трафік</li>
+                        </ul>
+                        <a href="#" class="btn-order">Замовити</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <h3>Оптимальний</h3>
+                        <div class="price">499 грн</div>
+                        <div class="period">/місяць</div>
+                        <ul class="feature-list">
+                            <li>4 ядра CPU</li>
+                            <li>4 ГБ RAM</li>
+                            <li>40 ГБ SSD</li>
+                            <li>Безлімітний трафік</li>
+                        </ul>
+                        <a href="#" class="btn-order">Замовити</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <h3>Преміум</h3>
+                        <div class="price">799 грн</div>
+                        <div class="period">/місяць</div>
+                        <ul class="feature-list">
+                            <li>8 ядер CPU</li>
+                            <li>8 ГБ RAM</li>
+                            <li>80 ГБ SSD</li>
+                            <li>Безлімітний трафік</li>
+                        </ul>
+                        <a href="#" class="btn-order">Замовити</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Дата-центр -->
+    <section class="datacenter-section">
+        <div class="container">
+            <h2 class="datacenter-title">Наш дата-центр</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="datacenter-card">
+                        <h3>Інфраструктура</h3>
+                        <p>
+                            Сучасний дата-центр з високою доступністю та безпекою. 
+                            Ми використовуємо найновіше обладнання та технології для забезпечення 
+                            стабільної роботи вашого серверного обладнання.
+                        </p>
+                        <ul class="feature-list">
+                            <li>Системи безперебійного живлення</li>
+                            <li>Клімат-контроль</li>
+                            <li>Системи пожежної безпеки</li>
+                            <li>Цілодобове відеоспостереження</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="datacenter-card">
+                        <h3>Підтримка</h3>
+                        <p>
+                            Наша команда технічної підтримки працює 24/7 для забезпечення 
+                            безперебійної роботи вашого обладнання та вирішення будь-яких 
+                            технічних питань.
+                        </p>
+                        <ul class="feature-list">
+                            <li>Цілодобова технічна підтримка</li>
+                            <li>Моніторинг системи</li>
+                            <li>Резервне копіювання</li>
+                            <li>Консультації з налаштування</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Импортируем футер из index.html -->
+    <footer>
+        <!-- ... футер ... -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дикий Сад - Інтернет провайдер</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        :root {
+            --color-mode--ui_text-neutral-02: var(--text-colors--text-neutral-dark-02);
+            --color-mode--ui_text-neutral-01: var(--text-colors--text-neutral-dark-01);
+            --gray80-23262d: #23262d;
+            --graydark-0e1012: #0e1012;
+            --white-ffffff: white;
+            --gray90-161a1d: #161a1d;
+            --gray5-f7f9fc: #f7f9fc;
+            --blue60-0062ca: #0062ca;
+            --gray60-566171: #566171;
+            --gray40-a0aaba: #a0aaba;
+            --nav--light-text-secondary: var(--gray60-566171);
+            --gray70-333943: #333943;
+            --gray50-8b96aa: #8b96aa;
+            --gray30-bbc2ce: #bbc2ce;
+            --gray20-d5dae2: #d5dae2;
+            --gray10-eceff5: #eceff5;
+            --blue90-001832: #001832;
+            --blue80-003165: #003165;
+            --blue70-004997: #004997;
+            --blue50-007afc: #007afc;
+            --blue40-3195ff: #3195ff;
+            --blue30-64afff: #64afff;
+            --blue20-98caff: #98caff;
+            --blue10-cbe4ff: #cbe4ff;
+            --blue5-eff7ff: #eff7ff;
+            --orange50-fc8200: #fc8200;
+            --orange40-ff9b31: #ff9b31;
+            --orange60-ca6800: #ca6800;
+            --red60-c9220c: #c9220c;
+            --red50-f13219: #f13219;
+            --red40-f45b47: #f45b47;
+            --green60-1b6e45: #1b6e45;
+            --green50-228a56: #228a56;
+            --green40-2fc078: #2fc078;
+            --yellow60-e5bc01: #e5bc01;
+            --yellow50-fed622: #fed622;
+            --yellow40-fede4e: #fede4e;
+            --nav--light-text-primary: var(--gray80-23262d);
+            --nav--light-icon-globe: #8b96aa;
+            --design-system-colors--primary: var(--design-system-colors--primary50);
+            --green5-e9faf1: #e9faf1;
+            --green10-c9f2dd: #c9f2dd;
+            --orange90-321a00: #321a00;
+            --orange80-653400: #653400;
+            --orange70-974e00: #974e00;
+            --orange30-ffb464: #ffb464;
+            --orange20-ffcd98: #ffcd98;
+            --orange10-ffe6cb: #ffe6cb;
+            --orange5-fff5ea: #fff5ea;
+            --red90-320903: #320903;
+            --red80-641106: #641106;
+            --red70-961a09: #961a09;
+            --red30-f78475: #f78475;
+            --red20-f9ada3: #f9ada3;
+            --red10-fcd6d1: #fcd6d1;
+            --red5-fcefed: #fcefed;
+            --green90-071c11: #071c11;
+            --green80-0e3722: #0e3722;
+            --green70-145334: #145334;
+            --green30-5cd79a: #5cd79a;
+            --green20-93e4bb: #93e4bb;
+            --yellow90-392f00: #392f00;
+            --yellow80-735e01: #735e01;
+            --yellow70-ac8d01: #ac8d01;
+            --yellow30-fee67a: #fee67a;
+            --yellow20-ffefa7: #ffefa7;
+            --yellow10-fff7d3: #fff7d3;
+            --yellow5-fffced: #fffced;
+            --nav--light-tag: #cbe4ff;
+            --nav--light-bg: var(--white-ffffff);
+            --nav--light-menu: var(--gray80-23262d);
+            --nav--light-icon: var(--gray50-8b96aa);
+            --nav--light-stroke: #d5dae2;
+            --nav--light-overlay: #23262d14;
+            --nav--light-bg-2: var(--gray5-f7f9fc);
+            --nav--light-divider: var(--gray20-d5dae2);
+            --nav--dark-menu: var(--white-ffffff);
+            --design-system-colors--neutral80: var(--gray80-23262d);
+            --text-colors--text-primary: var(--text-colors--text-primary50);
+            --text-colors--text-neutral-light-01: var(--design-system-colors--neutral5);
+            --color-mode--ui_background-neutral-01: var(--background-colors--background-neutral-light-01);
+            --color-mode--ui_background-neutral-02: var(--background-colors--background-neutral-light-02);
+            --color-mode--ui_background-neutral-03: var(--background-colors--background-neutral-light-03);
+            --color-mode--ui_background-neutral-04: var(--background-colors--background-neutral-light-04);
+            --color-mode--ui_text-neutral-03: var(--text-colors--text-neutral-dark-03);
+            --color-mode--ui_text-neutral-04: var(--text-colors--text-neutral-dark-04);
+            --color-mode--ui_background-primary5: var(--background-colors--background-primary5);
+            --color-mode--ui_background-primary10: var(--background-colors--background-primary10);
+            --color-mode--ui_text-neutral-05: var(--text-colors--text-neutral-dark-05);
+            --color-mode--ui_background-neutral-05: var(--background-colors--background-neutral-light-05);
+            --color-mode--ui_background-primary20: var(--background-colors--background-primary20);
+            --color-mode--ui_background-primary30: var(--background-colors--background-primary30);
+            --color-mode--ui_background-primary40: var(--background-colors--background-primary40);
+            --color-mode--ui_background-primary50: var(--background-colors--background-primary50);
+            --color-mode--ui_background-primary60: var(--background-colors--background-primary60);
+            --color-mode--ui_background-primary70: var(--background-colors--background-primary70);
+            --color-mode--ui_background-primary80: var(--background-colors--background-primary80);
+            --color-mode--ui_background-primary90: var(--background-colors--background-primary90);
+            --color-mode--ui_background-primary: var(--color-mode--ui_background-primary50);
+            --color-mode--ui_text-primary: var(--text-colors--text-primary);
+            --design-system-colors--neutral20: var(--gray20-d5dae2);
+            --text-colors--text-neutral-dark-01: var(--design-system-colors--neutral80);
+            --design-system-colors--neutral10: var(--gray10-eceff5);
+            --background-colors--background-primary: var(--background-colors--background-primary50);
+            --background-colors--background-neutral-light-02: var(--design-system-colors--neutral5);
+            --background-colors--background-neutral-dark-02: var(--design-system-colors--neutral90);
+            --background-colors--background-neutral-light-01: var(--design-system-colors--neutral0);
+            --background-colors--background-primary5: var(--design-system-colors--primary5);
+            --text-colors--text-green: var(--green50-228a56);
+            --purple5-f9f2ff: #f9f2ff;
+            --text-colors--text-purple: #7539d7;
+            --text-colors--text-orange: var(--orange50-fc8200);
+            --background-colors--background-neutral-light-03: var(--design-system-colors--neutral10);
+            --background-colors--background-neutral-light-04: var(--design-system-colors--neutral20);
+            --background-colors--background-neutral-light-05: var(--design-system-colors--neutral30);
+            --background-colors--background-neutral-dark-01: var(--design-system-colors--neutral100);
+            --background-colors--background-neutral-dark-03: var(--design-system-colors--neutral80);
+            --background-colors--background-neutral-dark-04: var(--design-system-colors--neutral70);
+            --background-colors--background-neutral-dark-05: var(--design-system-colors--neutral60);
+            --background-colors--background-primary10: var(--design-system-colors--primary10);
+            --background-colors--background-primary20: var(--design-system-colors--primary20);
+            --background-colors--background-primary30: var(--design-system-colors--primary30);
+            --background-colors--background-primary40: var(--design-system-colors--primary40);
+            --background-colors--background-primary50: var(--design-system-colors--primary50);
+            --background-colors--background-primary60: var(--design-system-colors--primary60);
+            --background-colors--background-primary70: var(--design-system-colors--primary70);
+            --background-colors--background-primary80: var(--design-system-colors--primary80);
+            --background-colors--background-primary90: var(--design-system-colors--primary90);
+            --design-system-colors--primary5: var(--blue5-eff7ff);
+            --design-system-colors--primary10: var(--blue10-cbe4ff);
+            --design-system-colors--primary20: var(--blue20-98caff);
+            --design-system-colors--primary30: var(--blue30-64afff);
+            --design-system-colors--primary40: var(--blue40-3195ff);
+            --design-system-colors--primary50: var(--blue50-007afc);
+            --design-system-colors--primary60: var(--blue60-0062ca);
+            --design-system-colors--primary70: var(--blue70-004997);
+            --design-system-colors--primary80: var(--blue80-003165);
+            --design-system-colors--primary90: var(--blue90-001832);
+            --design-system-colors--neutral0: var(--white-ffffff);
+            --design-system-colors--neutral5: var(--gray5-f7f9fc);
+            --design-system-colors--neutral30: var(--gray30-bbc2ce);
+            --design-system-colors--neutral40: var(--gray40-a0aaba);
+            --design-system-colors--neutral50: var(--gray50-8b96aa);
+            --design-system-colors--neutral60: var(--gray60-566171);
+            --design-system-colors--neutral70: var(--gray70-333943);
+            --design-system-colors--neutral90: var(--gray90-161a1d);
+            --design-system-colors--neutral100: var(--graydark-0e1012);
+            --nav--dark-tag: #0062ca;
+            --nav--dark-bg: var(--graydark-0e1012);
+            --nav--dark-text-primary: var(--white-ffffff);
+            --nav--dark-icon: var(--gray60-566171);
+            --nav--dark-icon-globe: #a0aaba;
+            --nav--dark-stroke: #a0aaba;
+            --nav--dark-overlay: #23262d26;
+            --nav--dark-text-secondary: var(--gray40-a0aaba);
+            --nav--dark-bg-2: var(--gray90-161a1d);
+            --nav--dark-divider: var(--gray70-333943);
+            --text-colors--text-neutral-light-02: var(--design-system-colors--neutral40);
+            --text-colors--text-neutral-light-03: var(--design-system-colors--neutral50);
+            --text-colors--text-neutral-light-04: var(--design-system-colors--neutral60);
+            --text-colors--text-neutral-light-05: var(--design-system-colors--neutral70);
+            --text-colors--text-neutral-dark-02: var(--design-system-colors--neutral60);
+            --text-colors--text-neutral-dark-03: var(--design-system-colors--neutral50);
+            --text-colors--text-neutral-dark-04: var(--design-system-colors--neutral40);
+            --text-colors--text-neutral-dark-05: var(--design-system-colors--neutral30);
+            --text-colors--text-primary5: var(--design-system-colors--primary5);
+            --text-colors--text-primary10: var(--design-system-colors--primary10);
+            --text-colors--text-primary20: var(--design-system-colors--primary20);
+            --text-colors--text-primary30: var(--design-system-colors--primary30);
+            --text-colors--text-primary40: var(--design-system-colors--primary40);
+            --text-colors--text-primary50: var(--design-system-colors--primary50);
+            --text-colors--text-primary60: var(--design-system-colors--primary60);
+            --text-colors--text-primary70: var(--design-system-colors--primary70);
+            --text-colors--text-primary80: var(--design-system-colors--primary80);
+            --text-colors--text-primary90: var(--design-system-colors--primary90)
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--white-ffffff);
+            background: var(--graydark-0e1012);
+        }
+
+        .bg-gray-dark {
+            background-color: var(--graydark-0e1012)
+        }
+        .page-wrap {
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            min-height: 100vh;
+            font-family: Cera pro, Trebuchet MS, sans-serif;
+            display: flex;
+            position: relative;
+            padding-top: 56px; /* Добавляем отступ сверху, равный высоте навбара (обычно 56px) */
+
+        }
+        .wp-gradient-hero {
+            width: 2000px;
+            height: 2000px;
+            position: absolute;
+            top: -193px;
+            border-radius: 1920px;
+            background: radial-gradient(46.92% 46.92% at 51.46% 50.00%, rgba(164, 73, 255, 0.90) 0%, rgba(164, 73, 255, 0) 100%);
+            z-index: 0; /* Чтобы градиент был под каруселью */
+
+        }
+        /* Navbar */
+        .navbar {
+            background: var(--white-ffffff) !important;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--gray80-23262d);
+        }
+
+        .nav-link {
+            color: var(--gray60-566171) !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem !important;
+        }
+
+        .nav-link:hover {
+            color: var(--gray80-23262d) !important;
+        }
+
+        /* Мегаменю */
+        .mega-menu {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 56px;
+            background: var(--white-ffffff);
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: none;
+            z-index: 999;
+        }
+
+        .nav-item:hover .mega-menu {
+            display: block;
+        }
+
+        .mega-menu-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .mega-menu-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .mega-menu-section h3 {
+            color: var(--gray80-23262d);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .mega-menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mega-menu-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .mega-menu-list a {
+            color: var(--gray60-566171);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .mega-menu-list a:hover {
+            color: var(--gray80-23262d);
+        }
+
+        .navbar .btn {
+            background: var(--blue50-007afc);
+            border: none;
+            color: var(--white-ffffff);
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar .btn:hover {
+            background: var(--blue60-0062ca);
+        }
+
+        .navbar .btn-outline {
+            background: transparent;
+            border: 1px solid var(--gray60-566171);
+            color: var(--gray80-23262d);
+        }
+
+        .navbar .btn-outline:hover {
+            background: var(--gray10-eceff5);
+            color: var(--gray80-23262d);
+        }
+
+        /* Features Section */
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-card {
+            background: var(--gray90-161a1d);
+            border: 1px solid var(--gray70-333943);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--blue50-007afc);
+            box-shadow: 0 10px 30px rgba(0, 123, 252, 0.1);
+        }
+
+        .feature-card h3 {
+            color: var(--white-ffffff);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--gray40-a0aaba);
+        }
+
+        /* Demo Section */
+        .demo {
+            background: #f8f9fa;
+        }
+
+        .demo h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .wp-container {
+            max-width: 800px;
+            margin: 0 auto;
+            height: 400px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #007bff;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-section .cta-button {
+            background: #fff;
+            color: #007bff;
+        }
+
+        .cta-section .cta-button:hover {
+            background: #e9ecef;
+            color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gray90-161a1d);
+            border-top: 1px solid var(--gray70-333943);
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--gray40-a0aaba);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white-ffffff);
+            text-decoration: none;
+        }
+
+        /* Герой секция */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(90deg, #fff, #a449ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--gray40-a0aaba);
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: var(--blue50-007afc);
+            border: none;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--gray60-566171);
+            color: var(--white-ffffff);
+            padding: 1rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--blue60-0062ca);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Стили для карусели */
+        #carouselExampleCaptions {
+            position: relative; /* Важно для правильного позиционирования */
+            z-index: 1; /* Карусель поверх градиента */
+            margin-top: -56px; /*  чтобы карусель начиналась от верха страницы */
+        }
+        .carousel-caption {
+            text-align: left; /* Выравниваем текст по левому краю */
+            left: 5%; /* Отступ слева */
+            right: 50%; /* Сдвигаем вправо, чтобы освободить место для картинки */
+            bottom: 20px; /* Отступ снизу */
+            color: white; /* Цвет текста */
+            padding: 20px; /* Внутренние отступы */
+        }
+
+        .carousel-item img {
+            max-height: 500px; /* Ограничиваем высоту картинок */
+            width: auto;
+            /* Центрируем картинки, если они меньше контейнера */
+            margin: 0 auto;
+            object-fit: cover; /*  обрезаем изображения */
+        }
+        /* Добавляем медиа-запрос для больших экранов */
+        @media (min-width: 769px) {
+            .carousel-item img {
+                max-height: 700px; /* Увеличиваем высоту для больших экранов */
+            }
+            .carousel-caption{
+                bottom: 50%;
+                transform: translateY(50%);
+            }
+        }
+        /* Стили для текста поверх карусели */
+        .carousel-text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 2; /* Над каруселью */
+            width: 80%; /* Ширина блока с текстом */
+        }
+        /*Добавляем медиа-запросы для адаптивности*/
+        @media (max-width: 767px) {
+            .carousel-caption {
+                right: 5%;  /* На мобильных устройствах текст под картинкой */
+                left: 5%;
+                text-align: center; /* Центрируем текст */
+                padding-bottom: 50px;
+            }
+
+            .carousel-caption h5 {
+                font-size: 1.25rem; /* Уменьшаем размер заголовка */
+            }
+
+            .carousel-caption p, .carousel-caption .btn {
+                display: none; /* Скрываем описание и кнопку на мобильных */
+            }
+            .carousel-text-overlay{
+                top: 60px;
+                transform: translate(-50%, 0);
+                position: relative;
+            }
+        }
+
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-dark">
+    <div class="page-wrap">
+        <!-- Навигация -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="images/wp-logo.png" alt="Дикий Сад" height="32">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="internet.html">Мережа Інтернет</a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-content">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="mega-menu-section">
+                                                <h3>Підключення та тарифи</h3>
+                                                <ul class="mega-menu-list">
+                                                    <li><a href="internet.html#tariffs">Тарифи та послуги</a></li>
+                                                    <li><a href="internet.html#connect">Замовлення підключення</a></li>
+                                                    <li><a href="internet.html#ups">Замовлення на встановлення UPS</a></li>
+                                                    <li><a href="internet.html#gigabit">Доступ зі швидкістю 1 Гбіт/с!</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mega-menu-section">
+                                                <h3>Налаштування</h3>
+                                                <ul class="mega-menu-list">
+                                                    <li><a href="internet.html#ipv6">Підтримка протоколу IPv6</a></li>
+                                                    <li><a href="internet.html#wifi-setup">Налаштування Wi-Fi мережі</a></li>
+                                                    <li><a href="internet.html#security">Безпека в мережі</a></li>
+                                                    <li><a href="internet.html#email">Електронна пошта (e-mail)</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mega-menu-section">
+                                                <h3>Інструкції підключення</h3>
+                                                <ul class="mega-menu-list">
+                                                    <li><a href="internet.html#win-xp">Windows XP</a></li>
+                                                    <li><a href="internet.html#win-7-8">Windows 7 и 8</a></li>
+                                                    <li><a href="internet.html#win-10">Windows 10</a></li>
+                                                    <li><a href="internet.html#connection-errors">Помилки підключення</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tv.html">IP-телебачення</a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-content">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="mega-menu-section">
+                                                <h3>Загальна інформація</h3>
+                                                <ul class="mega-menu-list">
+                                                    <li><a href="tv.html#iptv-info">Загальні відомості</a></li>
+                                                    <li><a href="tv.html#channels">Перелiк доступних каналiв</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mega-menu-section">
+                                                <h3>Налаштування</h3>
+                                                <ul class="mega-menu-list">
+                                                    <li><a href="tv.html#mag425">STB MAG425a</a></li>
+                                                    <li><a href="tv.html#android-tv">Android TV</a></li>
+                                                    <li><a href="tv.html#android-mobile">Android смартфони</a></li>
+                                                    <li><a href="tv.html#mag-manual">Керівництво MAG</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="hosting.html">Хостинг</a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-content">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="mega-menu-section">
+                                                <h3>Послуги хостингу</h3>
+                                                <ul class="mega-menu-list">
+                                                    <li><a href="hosting.html#colocation">Colocation</a></li>
+                                                    <li><a href="hosting.html#vps">VPS</a></li>
+                                                    <li><a href="hosting.html#hosting-service">Хостинг</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mega-menu-section">
+                                                <h3>Маршрутизатори</h3>
+                                                <ul class="mega-menu-list">
+                                                    <li><a href="hosting.html#routers">Перелік пристроїв</a></li>
+                                                    <li><a href="hosting.html#mikrotik">Налаштування Mikrotik</a></li>
+                                                    <li><a href="hosting.html#dns-protection">Блокування DNS-атак</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#voip">IP-телефонія</a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-content">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="mega-menu-section">
+                                                <h3>Послуги телефонії</h3>
+                                                <ul class="mega-menu-list">
+                                                    <li><a href="#voip-tariffs">Тарифи та ціни</a></li>
+                                                    <li><a href="#call-stats">Статистика дзвінків</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mega-menu-section">
+                                                <h3>Налаштування</h3>
+                                                <ul class="mega-menu-list">
+                                                    <li><a href="#android-sip">SIP для Android</a></li>
+                                                    <li><a href="#windows-sip">Zoiper для Windows</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#payment">Оплата</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#support">Підтримка</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex gap-2">
+                        <a href="https://statserv.wildpark.net/BOSSclient/" target="_blank" class="btn btn-outline">Особистий кабінет</a>
+                        <a href="#connect" class="btn btn-primary">Підключитись</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Герой секция -->
+        <section class="hero-section">
+            <div class="wp-gradient-hero"></div>
+            <div class="hero-content animate-fade-in">
+                <h1 class="hero-title">Швидкісний інтернет<br>для вашого комфорту</h1>
+                <p class="hero-description">Підключіть стабільний інтернет від провайдера №1 у Миколаєві.<br>Швидкість до 1 Гбіт/с та енергонезалежність мережі.</p>
+                <div class="hero-buttons">
+                    <a href="#connect" class="btn btn-primary">Підключити інтернет</a>
+                    <a href="#tariffs" class="btn btn-outline">Дивитись тарифи</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Основной контент -->
+        <main>
+            <!-- Тарифы -->
+            <section class="features py-5">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="display-4 text-white mb-3">Тарифи та послуги</h2>
+                        <p class="text-gray-40">Оберіть оптимальний тариф для ваших потреб</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <h3>Базовий</h3>
+                                <div class="price mb-4">
+                                    <span class="h2">199</span>
+                                    <span class="text-gray-40">грн/міс</span>
+                                </div>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2">✓ Швидкість до 100 Мбіт/с</li>
+                                    <li class="mb-2">✓ Безлімітний трафік</li>
+                                    <li class="mb-2">✓ Підтримка 24/7</li>
+                                </ul>
+                                <a href="#connect" class="btn btn-primary w-100">Обрати тариф</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <h3>Оптимальний</h3>
+                                <div class="price mb-4">
+                                    <span class="h2">299</span>
+                                    <span class="text-gray-40">грн/міс</span>
+                                </div>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2">✓ Швидкість до 500 Мбіт/с</li>
+                                    <li class="mb-2">✓ Безлімітний трафік</li>
+                                    <li class="mb-2">✓ Підтримка 24/7</li>
+                                    <li class="mb-2">✓ Статична IP-адреса</li>
+                                </ul>
+                                <a href="#connect" class="btn btn-primary w-100">Обрати тариф</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <h3>Максимальний</h3>
+                                <div class="price mb-4">
+                                    <span class="h2">499</span>
+                                    <span class="text-gray-40">грн/міс</span>
+                                </div>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2">✓ Швидкість до 1 Гбіт/с</li>
+                                    <li class="mb-2">✓ Безлімітний трафік</li>
+                                    <li class="mb-2">✓ Підтримка 24/7</li>
+                                    <li class="mb-2">✓ Статична IP-адреса</li>
+                                    <li class="mb-2">✓ Енергонезалежність</li>
+                                </ul>
+                                <a href="#connect" class="btn btn-primary w-100">Обрати тариф</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Преимущества -->
+            <section class="py-5 bg-gray-90">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="display-4 text-white mb-3">Чому обирають нас</h2>
+                        <p class="text-gray-40">Переваги підключення до мережі Дикий Сад</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <div class="mb-3">
+                                    <svg class="text-blue-50" width="48" height="48" viewBox="0 0 24 24">
+                                        <!-- Иконка скорости -->
+                                        <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+                                        <path fill="currentColor" d="M12 5v7l5.2 3.1.8-1.2-4.5-2.7V5z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="h5 text-white">Швидкість</h3>
+                                <p class="text-gray-40">До 1 Гбіт/с</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <div class="mb-3">
+                                    <svg class="text-blue-50" width="48" height="48" viewBox="0 0 24 24">
+                                        <!-- Иконка стабильности -->
+                                        <path fill="currentColor" d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 18l-8-4V8l8 4v8zm2-8l-8-4 8-4 8 4-8 4z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="h5 text-white">Стабільність</h3>
+                                <p class="text-gray-40">99.9% часу в мережі</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <div class="mb-3">
+                                    <svg class="text-blue-50" width="48" height="48" viewBox="0 0 24 24">
+                                        <!-- Иконка поддержки -->
+                                        <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-14h2v7h-2zm0 8h2v2h-2z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="h5 text-white">Підтримка</h3>
+                                <p class="text-gray-40">24/7 онлайн</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <div class="mb-3">
+                                    <svg class="text-blue-50" width="48" height="48" viewBox="0 0 24 24">
+                                        <!-- Иконка энергонезависимости -->
+                                        <path fill="currentColor" d="M7 2v11h3v9l7-12h-4l4-8z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="h5 text-white">Енергонезалежність</h3>
+                                <p class="text-gray-40">Працюємо без світла</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA секция -->
+            <section class="py-5">
+                <div class="container">
+                    <div class="text-center">
+                        <h2 class="display-4 text-white mb-4">Готові підключитись?</h2>
+                        <p class="text-gray-40 mb-4">Залиште заявку і ми зв'яжемось з вами протягом 15 хвилин</p>
+                        <a href="#connect" class="btn btn-primary btn-lg">Підключити інтернет</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Футер -->
+        <footer class="py-5 bg-gray-90">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <img src="images/wp-logo.png" alt="Дикий Сад" height="32" class="mb-4">
+                        <p class="text-gray-40">Інтернет провайдер №1 у Миколаєві</p>
+                    </div>
+                    <div class="col-6 col-lg-2 mb-4">
+                        <h5 class="text-white mb-3">Послуги</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-gray-40 text-decoration-none">Інтернет</a></li>
+                            <li><a href="#" class="text-gray-40 text-decoration-none">Телебачення</a></li>
+                            <li><a href="#" class="text-gray-40 text-decoration-none">Хостинг</a></li>
+                            <li><a href="#" class="text-gray-40 text-decoration-none">VPS</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-2 mb-4">
+                        <h5 class="text-white mb-3">Компанія</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-gray-40 text-decoration-none">Про нас</a></li>
+                            <li><a href="#" class="text-gray-40 text-decoration-none">Контакти</a></li>
+                            <li><a href="#" class="text-gray-40 text-decoration-none">Вакансії</a></li>
+                            <li><a href="#" class="text-gray-40 text-decoration-none">Новини</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <h5 class="text-white mb-3">Контакти</h5>
+                        <p class="text-gray-40">м. Миколаїв, вул. Примерна, 123</p>
+                        <p class="text-gray-40">support@dikiy-sad.net</p>
+                        <p class="text-gray-40">0 800 123 456</p>
+                    </div>
+                </div>
+                <hr class="border-gray-70 my-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="text-gray-40 mb-0">© 2024 Дикий Сад. Усі права захищено.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <a href="#" class="text-gray-40 text-decoration-none">Політика конфіденційності</a>
+                            </li>
+                            <li class="list-inline-item ms-3">
+                                <a href="#" class="text-gray-40 text-decoration-none">Умови використання</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Добавление класса для прозрачной навигации при скролле
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Плавное появление мегаменю
+        document.querySelectorAll('.nav-item').forEach(item => {
+            let timeout;
+            
+            item.addEventListener('mouseenter', () => {
+                clearTimeout(timeout);
+                document.querySelectorAll('.mega-menu').forEach(menu => {
+                    menu.style.display = 'none';
+                });
+                const megaMenu = item.querySelector('.mega-menu');
+                if (megaMenu) {
+                    megaMenu.style.display = 'block';
+                    megaMenu.style.opacity = '0';
+                    setTimeout(() => {
+                        megaMenu.style.transition = 'opacity 0.3s ease';
+                        megaMenu.style.opacity = '1';
+                    }, 50);
+                }
+            });
+
+            item.addEventListener('mouseleave', () => {
+                const megaMenu = item.querySelector('.mega-menu');
+                if (megaMenu) {
+                    megaMenu.style.opacity = '0';
+                    timeout = setTimeout(() => {
+                        megaMenu.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+                            
