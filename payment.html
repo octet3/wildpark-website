@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оплата послуг - Дикий Сад</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        :root {
+            --blue50-007afc: #007afc;
+            --blue60-0062ca: #0062ca;
+            --gray80-23262d: #23262d;
+            --gray60-566171: #566171;
+            --gray40-a0aaba: #a0aaba;
+            --gray20-d5dae2: #d5dae2;
+            --gray10-eceff5: #eceff5;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--gray80-23262d);
+            background: #fff;
+            padding-top: 72px;
+        }
+
+        .payment-header {
+            background: linear-gradient(90deg, var(--blue50-007afc), var(--blue60-0062ca));
+            padding: 4rem 0;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .payment-card {
+            background: white;
+            border: 1px solid var(--gray20-d5dae2);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .payment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 123, 252, 0.1);
+            border-color: var(--blue50-007afc);
+        }
+
+        .payment-card h3 {
+            color: var(--gray80-23262d);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .payment-card svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--blue50-007afc);
+        }
+
+        .payment-card p {
+            color: var(--gray60-566171);
+            margin-bottom: 1rem;
+        }
+
+        .payment-card .btn {
+            background: var(--blue50-007afc);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .payment-card .btn:hover {
+            background: var(--blue60-0062ca);
+        }
+
+        .alert-info {
+            background: var(--gray10-eceff5);
+            border: 1px solid var(--gray20-d5dae2);
+            color: var(--gray60-566171);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-header">
+        <div class="container">
+            <h1 class="display-4 mb-3">Способи оплати послуг</h1>
+            <p class="lead mb-0">Оберіть зручний для вас спосіб оплати послуг компанії "Дикий Сад"</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="payment-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                        Приват24
+                    </h3>
+                    <p>Найпопулярніший Інтернет-банк України. Оплата можлива з карт будь-якого банку.</p>
+                    <a href="https://www.privat24.ua/" class="btn" target="_blank">Перейти до оплати</a>
+                </div>
+
+                <div class="payment-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                        Термінали ПриватБанку
+                    </h3>
+                    <p>Поповніть свій рахунок через термінали самообслуговування ПриватБанку.</p>
+                </div>
+
+                <div class="payment-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                        Мобільний додаток А-банку
+                    </h3>
+                    <p>Відкрийте мобільний додаток А-банку, виберіть "Комуналка і Інтернет". Створіть шаблон платежу для швидкої оплати.</p>
+                </div>
+
+                <div class="payment-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                        Portmone
+                    </h3>
+                    <p>Оплачуйте послуги за допомогою платіжної системи Portmone банківською картою або через Google Pay.</p>
+                    <a href="https://www.portmone.com.ua/" class="btn" target="_blank">Перейти до оплати</a>
+                </div>
+
+                <div class="payment-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                        EasyPay
+                    </h3>
+                    <p>Використовуйте термінальну мережу EasyPay або оплачуйте банківською картою онлайн.</p>
+                    <a href="https://easypay.ua/" class="btn" target="_blank">Перейти до оплати</a>
+                </div>
+
+                <div class="payment-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                        City24
+                    </h3>
+                    <p>Оплачуйте послуги через термінальну мережу City24 або онлайн банківською картою.</p>
+                    <a href="https://city24.ua/" class="btn" target="_blank">Перейти до оплати</a>
+                </div>
+
+                <div class="payment-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                        Інтернет-карти
+                    </h3>
+                    <p>Придбайте інтернет-карту в офісі компанії та поповніть рахунок у будь-який зручний час.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="alert-info">
+                    <h4>Важлива інформація</h4>
+                    <p>При оплаті через будь-яку платіжну систему кошти зараховуються на ваш рахунок протягом декількох хвилин.</p>
+                    <p>У разі виникнення питань щодо оплати, звертайтесь до служби підтримки:</p>
+                    <ul>
+                        <li>Телефон: 0 800 123 456</li>
+                        <li>Email: support@dikiy-sad.net</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
